@@ -1,0 +1,142 @@
+
+        <html xmlns:v="urn:schemas-microsoft-com:vml"
+        xmlns:o="urn:schemas-microsoft-com:office:office"
+        xmlns:w="urn:schemas-microsoft-com:office:word"
+        xmlns="http://www.w3.org/TR/REC-html40">
+        <head><meta http-equiv=Content-Type content="text/html;  
+        charset=utf-8">
+        <meta name=ProgId content=Word.Document>
+        <meta name=Generator content="Microsoft Word 11">
+        <meta name=Originator content="Microsoft Word 11">
+        <xml><w:WordDocument><w:View>Print</w:View></xml></head>
+        <body><h1>1、上传接口</h1><div style="margin-left:20px;"><p><strong>简要描述：</strong> </p>
+<ul>
+<li>客户端上传接口</li>
+</ul>
+<p><strong>请求URL：</strong> </p>
+<ul>
+<li><code>http://127.0.0.1：8000/addcli/</code></li>
+</ul>
+<p><strong>请求方式：</strong></p>
+<ul>
+<li>POST</li>
+</ul>
+<p><strong>参数：</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">参数名</th>
+<th style="text-align: left;">必选</th>
+<th style="text-align: left;">类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">name</td>
+<td style="text-align: left;">是</td>
+<td style="text-align: left;">string</td>
+<td>客户端名称</td>
+</tr>
+<tr>
+<td style="text-align: left;">score</td>
+<td style="text-align: left;">是</td>
+<td style="text-align: left;">int</td>
+<td>分数</td>
+</tr>
+</tbody>
+</table>
+<p><strong>返回示例</strong></p>
+<pre><code>  {
+    &quot;mes&quot;:&quot;添加成功&quot;
+  }</code></pre>
+<p><strong>返回参数说明</strong> </p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">参数名</th>
+<th style="text-align: left;">类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">mes</td>
+<td style="text-align: left;">string</td>
+<td>添加成功/失败(原因)</td>
+</tr>
+</tbody>
+</table></div><h1>2、展示接口</h1><div style="margin-left:20px;"><p><strong>简要描述：</strong> </p>
+<ul>
+<li>客户端排名展示接口</li>
+</ul>
+<p><strong>请求URL：</strong> </p>
+<ul>
+<li><code>http://127.0.0.1:8000/showcli/</code></li>
+</ul>
+<p><strong>请求方式：</strong></p>
+<ul>
+<li>GET </li>
+</ul>
+<p><strong>参数：</strong> </p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">参数名</th>
+<th style="text-align: left;">必选</th>
+<th style="text-align: left;">类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">name</td>
+<td style="text-align: left;">是</td>
+<td style="text-align: left;">string</td>
+<td>客户端名称</td>
+</tr>
+<tr>
+<td style="text-align: left;">start</td>
+<td style="text-align: left;">否</td>
+<td style="text-align: left;">int</td>
+<td>排名开始范围</td>
+</tr>
+<tr>
+<td style="text-align: left;">end</td>
+<td style="text-align: left;">否</td>
+<td style="text-align: left;">int</td>
+<td>排名结束范围</td>
+</tr>
+</tbody>
+</table>
+<p><strong>返回示例</strong></p>
+<pre><code>  {
+    &quot;cli&quot;: {'rank':1,'name':客户端1,'score':9999999},
+    &quot;rankList&quot;: {[
+      {'rank':1,'name':客户端1,'score':9999999},
+      {'rank':2,'name':客户端2,'score':8888888},
+      ...
+    ]}
+  }</code></pre>
+<p><strong>返回参数说明</strong> </p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">参数名</th>
+<th style="text-align: left;">类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">cli</td>
+<td style="text-align: left;">dict</td>
+<td>当前客户端信息</td>
+</tr>
+<tr>
+<td style="text-align: left;">rankList</td>
+<td style="text-align: left;">Json</td>
+<td>客户端排行榜信息</td>
+</tr>
+</tbody>
+</table></div></body></html>
