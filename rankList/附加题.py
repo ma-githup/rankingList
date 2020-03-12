@@ -29,9 +29,8 @@ def check_zero(x):
     :type x: str
     :return: str
     '''
-    if x.startswith('0'):
-        x = x[1:]
-        return check_zero(x)
+    if x.startswith('0') and len(x) > 1:
+        return check_zero(x[1:])
     else:
         return x
 
